@@ -3,12 +3,8 @@ default: &default
 
 development:
   <<: *default
-  database: rails-template-01-development
+  database: rails-practice-validations-development
 
 test:
   <<: *default
-  database: rails-template-01-test
-
-production:
-  <<: *default
-  database: rails-template-01-production
+  database: rails-practice-validations-test
