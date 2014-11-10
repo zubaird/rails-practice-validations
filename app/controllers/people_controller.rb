@@ -10,11 +10,8 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-    if @person.save
-      redirect_to people_path, notice: "Person saved successfully"
-    else
-      render :new
-    end
+    @person.save
+    redirect_to people_path, notice: "Person saved successfully"
   end
 
   def edit
@@ -23,11 +20,8 @@ class PeopleController < ApplicationController
 
   def update
     @person = Person.find(params[:id])
-    if @person.update(person_params)
-      redirect_to people_path, notice: "Person updated successfully"
-    else
-      render :edit
-    end
+    @person.update(person_params)
+    redirect_to people_path, notice: "Person updated successfully"
   end
 
   private
